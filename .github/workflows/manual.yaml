@@ -1,0 +1,15 @@
+name: Manual
+on:
+    workflow_dispatch:
+        inputs:
+            param1:
+                type: string
+                default: Hello
+                required: true
+                description: A cheerful word
+
+jobs:
+    print:
+        runs-on: ubuntu-slim
+        steps:
+            - run: echo ${{ inputs.param1 }}
